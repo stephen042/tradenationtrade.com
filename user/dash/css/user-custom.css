@@ -1,0 +1,67 @@
+.unit-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 5px;
+    text-decoration: none;
+}
+
+.unit-link-active {
+    color: rgba(69, 131, 190, 0.9);
+    padding: 10px 5px;
+}
+
+.trade-buy-btn {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 17px;
+    text-align: center;
+}
+
+.trade-buy-btn:hover {
+    background-color: rgb(31, 105, 84);
+}
+
+.trade-sell-btn {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 17px;
+    text-align: center;
+}
+
+.trade-sell-btn:hover {
+    background-color: rgba(196, 61, 41, 0.997);
+}
+
+.trade-input {
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-select {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #000;
+}
+
+.txt-white {
+    color: rgba(255, 255, 255, 0.852) !important;
+}
+
+.table-custom thead tr th span {
+    color: rgba(255, 255, 255, 0.852);
+}
+
+.form-control {
+    background-color: rgb(240, 240, 240) !important;
+}
