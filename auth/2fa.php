@@ -1,4 +1,4 @@
-<?php  
+<?php
 session_start();
 
 include '../config/db.php';
@@ -16,16 +16,16 @@ if (isset($_SESSION['2fa_login'])) {
         $fa2_code = $data['2fa_code'];
         $email = $data['email'];
     }
-}else{
+} else {
     echo pageRedirect("0", "login.php");
 }
 
 if (isset($_POST['submit'])) {
     $otp = text_input($_POST['otp']);
-    if($otp == $fa2_code){
+    if ($otp == $fa2_code) {
         $_SESSION['user_mail'] = $login_email;
         echo "<script>window.location.href = '../user/dashboard.php' </script>";
-    }else{
+    } else {
         $err = "Invalid OTP";
     }
 }
@@ -61,12 +61,23 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="user/dash/css/user-custom.css">
     <script src="user/dash/notiflix-aio-3.2.5.min.js"></script>
     <script src="user/js/jquery-3.2.1.min.js"></script>
+    <!-- crisp Live Chat -->
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "ec939608-ebcf-4fca-877e-a93f696b171b";
+        (function() {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
 </head>
 
 <body>
     <!-- page loader begin -->
-    <div
-        class="page-loader w-100 h-100 bg-white d-flex justify-content-center align-items-center position-fixed overflow-hidden">
+    <div class="page-loader w-100 h-100 bg-white d-flex justify-content-center align-items-center position-fixed overflow-hidden">
         <div class="spinner-grow spinner-grow-sm text-primary"></div>
         <div class="spinner-grow spinner-grow-sm text-primary"></div>
         <div class="spinner-grow spinner-grow-sm text-primary"></div>
@@ -79,7 +90,7 @@ if (isset($_POST['submit'])) {
             <input type="hidden" name="email" value="<?php echo $email ?>">
         </form>
         <!-- section content begin -->
-        <section >
+        <section>
             <div class="container-fluid overflow-hidden">
                 <div class="row vh-100">
 
@@ -87,59 +98,53 @@ if (isset($_POST['submit'])) {
                         <div class="row justify-content-center">
                             <div class="col-md-8 col-lg-6">
                                 <div class="text-center">
-                                <a class="navbar-brand"  href="../index.html">
+                                    <a class="navbar-brand" href="../index.html">
                                         <img src="../assets/images/logo/logo.svg" alt="logo">
                                     </a>
                                     <p class="lead mt-1 mb-3">Welcome back <?php echo ucfirst($fname) ?>!</p>
-                                    <?php  
-                                        if (isset($_GET['resend'])) {
+                                    <?php
+                                    if (isset($_GET['resend'])) {
                                     ?>
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                         One time password has been resent to your mail
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                      </div>
-                                <?php } ?>
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            One time password has been resent to your mail
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    <?php } ?>
                                     <h6 class="font-weight-bold mt-4">Two Factor Authentication</h6>
                                     <p class="mb-4" style="font-size: 13px;">A one time password has been sent to
                                         <?php echo $login_email ?>.
                                         Kindly input OTP below. </p>
 
-                                        <?php  
-if ($msg != "") {
-	echo userAlert("success", $msg);
-}
+                                    <?php
+                                    if ($msg != "") {
+                                        echo userAlert("success", $msg);
+                                    }
 
-if ($err != "") {
-	echo userAlert("error", $err);
-}
-?>
+                                    if ($err != "") {
+                                        echo userAlert("error", $err);
+                                    }
+                                    ?>
                                     <!-- login form begin -->
                                     <form class="mb-2" method="POST" action="2fa.php">
                                         <div class="row g-1">
                                             <div class="col-12">
                                                 <div class="input-group">
-                                                    <input type="text"  name="otp" class="form-control"
-                                                        placeholder="OTP" aria-label="OTP">
-                                                    <span class="input-group-text"><i
-                                                            class="fas fa-lock fa-xs text-muted"></i></span>
+                                                    <input type="text" name="otp" class="form-control" placeholder="OTP" aria-label="OTP">
+                                                    <span class="input-group-text"><i class="fas fa-lock fa-xs text-muted"></i></span>
                                                 </div>
                                             </div>
 
                                             <br><br><br>
 
-                                            <small class="text-muted">Did not receive OTP ? <a href="javascript:void()"
-                                                    id="otpResendBtn"
-                                                    class="link-primary text-decoration-none">Resend</a></small>
+                                            <small class="text-muted">Did not receive OTP ? <a href="javascript:void()" id="otpResendBtn" class="link-primary text-decoration-none">Resend</a></small>
 
                                             <div class="d-grid">
-                                                <button type="submit" class="btn btn-primary"
-                                                    name="submit">Authenticate</button>
+                                                <button type="submit" class="btn btn-primary" name="submit">Authenticate</button>
                                             </div>
                                         </div>
                                     </form>
 
-                                    <small class="text-muted"><a href="javascript:void()" id="logoutBtn"
-                                            class="link-primary text-decoration-none">Logout</a></small>
+                                    <small class="text-muted"><a href="javascript:void()" id="logoutBtn" class="link-primary text-decoration-none">Logout</a></small>
                                 </div>
                             </div>
                         </div>
@@ -151,8 +156,8 @@ if ($err != "") {
         <!-- section content end -->
     </main>
 
-    
-    
+
+
 
     <script>
         // $(document).ready(function() {
@@ -171,6 +176,23 @@ if ($err != "") {
     <script src="../js/vendors/bootstrap.min.js"></script>
     <script src="../js/utilities.min.js"></script>
     <script src="../js/config-theme.js"></script>
+
+    
+  <!-- GetButton.io widget -->
+  <script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+1 (623) 352-5942", // WhatsApp number
+            call_to_action: "Message Us", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
 </body>
 
 

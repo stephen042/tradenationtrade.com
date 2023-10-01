@@ -97,25 +97,18 @@ if (isset($_POST['login_action'])) {
     <link rel="stylesheet" href="user/dash/css/user-custom.css">
     <script src="user/dash/notiflix-aio-3.2.5.min.js"></script>
     <script src="user/js/jquery-3.2.1.min.js"></script>
-    <!-- Smartsupp Live Chat script -->
-    <script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = '5211ff884b70b768b71c593f3556fdd0a59b4a30';
-        window.smartsupp || (function(d) {
-            var s, c, o = smartsupp = function() {
-                o._.push(arguments)
-            };
-            o._ = [];
-            s = d.getElementsByTagName('script')[0];
-            c = d.createElement('script');
-            c.type = 'text/javascript';
-            c.charset = 'utf-8';
-            c.async = true;
-            c.src = 'https://www.smartsuppchat.com/loader.js?';
-            s.parentNode.insertBefore(c, s);
-        })(document);
+      <!-- crisp Live Chat -->
+      <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "ec939608-ebcf-4fca-877e-a93f696b171b";
+        (function() {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
     </script>
-    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 </head>
 
 <body>
@@ -199,6 +192,22 @@ if (isset($_POST['login_action'])) {
     <script src="../js/vendors/bootstrap.min.js"></script>
     <script src="../js/utilities.min.js"></script>
     <script src="../js/config-theme.js"></script>
+    
+  <!-- GetButton.io widget -->
+  <script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+1 (623) 352-5942", // WhatsApp number
+            call_to_action: "Message Us", // Call to action
+            position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
 </body>
 
 
