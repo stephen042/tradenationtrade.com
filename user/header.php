@@ -60,7 +60,7 @@ if (isset($_GET['switch'])) {
     <!-- crisp Live Chat -->
     <script type="text/javascript">
         window.$crisp = [];
-        window.CRISP_WEBSITE_ID = "ec939608-ebcf-4fca-877e-a93f696b171b";
+        window.CRISP_WEBSITE_ID = "7aea3e6a-97a4-4565-b8ec-619ccaff5a45";
         (function() {
             d = document;
             s = d.createElement("script");

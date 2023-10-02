@@ -56,7 +56,7 @@ if (isset($_POST['reg'])) {
     }
 
     if (empty(text_input($_POST["gender"])) && text_input($_POST['gender'] == "")) {
-        $err = "Please pick.";
+        $err = "Please select gender.";
     } else {
         $gender = text_input($_POST["gender"]);
     }
@@ -139,10 +139,10 @@ if (isset($_POST['reg'])) {
     <link rel="stylesheet" href="user/dash/css/user-custom.css">
     <script src="user/dash/notiflix-aio-3.2.5.min.js"></script>
     <script src="user/js/jquery-3.2.1.min.js"></script>
-      <!-- crisp Live Chat -->
-      <script type="text/javascript">
+    <!-- crisp Live Chat -->
+    <script type="text/javascript">
         window.$crisp = [];
-        window.CRISP_WEBSITE_ID = "ec939608-ebcf-4fca-877e-a93f696b171b";
+        window.CRISP_WEBSITE_ID = "7aea3e6a-97a4-4565-b8ec-619ccaff5a45";
         (function() {
             d = document;
             s = d.createElement("script");
