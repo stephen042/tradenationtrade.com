@@ -139,18 +139,6 @@ if (isset($_POST['reg'])) {
     <link rel="stylesheet" href="user/dash/css/user-custom.css">
     <script src="user/dash/notiflix-aio-3.2.5.min.js"></script>
     <script src="user/js/jquery-3.2.1.min.js"></script>
-    <!-- crisp Live Chat -->
-    <script type="text/javascript">
-        window.$crisp = [];
-        window.CRISP_WEBSITE_ID = "7aea3e6a-97a4-4565-b8ec-619ccaff5a45";
-        (function() {
-            d = document;
-            s = d.createElement("script");
-            s.src = "https://client.crisp.chat/l.js";
-            s.async = 1;
-            d.getElementsByTagName("head")[0].appendChild(s);
-        })();
-    </script>
 </head>
 
 <body>
