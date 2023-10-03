@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
     <link rel="shortcut icon" href="../assets/images/logo/favicon.png" type="image/png">
     <!-- Touch icon -->
     <link rel="apple-touch-icon-precomposed" href="../assets/images/logo/favicon.png">
-    <title>Auth OTP - Trade Nation</title>
+    <title>Auth OTP - Trade Nations</title>
 
     <script src="../dash/js/jquery-3.2.1.min.js"></script>
     <script src="../dash/notiflix-Notiflix-dfaf93f/dist/notiflix-aio-3.2.5.min.js"></script>

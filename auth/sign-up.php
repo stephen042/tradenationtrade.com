@@ -131,7 +131,7 @@ if (isset($_POST['reg'])) {
     <link rel="shortcut icon" href="../assets/images/logo/favicon.png" type="image/png">
     <!-- Touch icon -->
     <link rel="apple-touch-icon-precomposed" href="../images/favicon.ico">
-    <title>Sign Up - Trade Nation</title>
+    <title>Sign Up - Trade Nations</title>
 
     <script src="../dash/js/jquery-3.2.1.min.js"></script>
     <script src="../dash/notiflix-Notiflix-dfaf93f/dist/notiflix-aio-3.2.5.min.js"></script>
